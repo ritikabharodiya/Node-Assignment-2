@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categories</title>
+</head>
+<body>
+  <h1>Categories</h1>
+  
+  <!-- Button to create a new category -->
+  <a href="/categories/new">Add New Category</a>
+  
+  <!-- List of categories -->
+  <ul>
+    <% categories.forEach(category => { %>
+      <li>
+        <%= category.name %>
+        <!-- Edit and delete buttons -->
+        <a href="/categories/<%= category._id %>/edit">Edit</a>
+        <form action="/categories/<%= category._id %>/delete" method="POST" style="display: inline;">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>

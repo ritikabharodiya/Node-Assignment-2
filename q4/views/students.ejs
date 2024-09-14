@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Students</title>
+</head>
+<body>
+    <h1>Students</h1>
+    <a href="/students/new">Add New Student</a>
+    <ul>
+        <% students.forEach(student => { %>
+            <li>
+                <%= student.name %> - <%= student.age %> - <%= student.grade %>
+                <a href="/students/edit/<%= student._id %>">Edit</a>
+                <form action="/students/delete/<%= student._id %>" method="POST" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+    <a href="/logout">Logout</a>
+</body>
+</html>

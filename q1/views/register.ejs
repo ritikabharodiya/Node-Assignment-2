@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+</head>
+<body>
+    <h1>User Registration</h1>
+    <form action="/register" method="POST" enctype="multipart/form-data">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br><br>
+        
+        <label for="profilePic">Profile Picture (single):</label>
+        <input type="file" id="profilePic" name="profilePic" accept="image/*">
+        <br><br>
+        
+        <label for="documents">Documents (multiple):</label>
+        <input type="file" id="documents" name="documents" accept="application/pdf" multiple>
+        <br><br>
+        
+        <button type="submit">Register</button>
+    </form>
+    <br>
+    <a href="/files">View Uploaded Files</a>
+</body>
+</html>
